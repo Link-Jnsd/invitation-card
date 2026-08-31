@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>相遇江南 · 情源内装 —— 预请柬</title>
+  <!-- Open Graph 社交分享卡片标签 —— 部署后请将 og:image 替换为实际图片URL -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="相遇江南 · 情源内装 —— 预请柬">
+  <meta property="og:description" content="江南造船内装部诚邀各位领导于9月19日登临国产大型邮轮「爱达·花城号」，共赴一场海上之约。">
+  <meta property="og:image" content="https://link-jnsd.github.io/invitation-card/ship2_nologo.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="4900">
+  <meta property="og:url" content="https://link-jnsd.github.io/invitation-card/">
+  <meta property="og:site_name" content="江南造船 · 内装部">
+  <meta property="og:locale" content="zh_CN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="相遇江南 · 情源内装 —— 预请柬">
+  <meta name="twitter:description" content="江南造船内装部诚邀各位领导登临国产大型邮轮「爱达·花城号」">
+  <meta name="twitter:image" content="https://link-jnsd.github.io/invitation-card/ship2_nologo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d5a3;
+      --gold-dark: #8a7028;
+      --navy: #0a1628;
+      --navy-light: #122240;
+      --blue-glow: #1a3a6e;
+      --white: #f5f0e6;
+      --white-dim: rgba(245,240,230,0.7);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 粒子背景 */
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0;
+      animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+    }
+
+    /* 横线装饰 */
+    .divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 24px auto;
+    }
+
+    .divider-wide {
+      width: 120px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 32px auto;
+    }
+
+    /* ===== 封面屏 ===== */
+    .screen-cover {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 24px;
+      overflow: hidden;
+    }
+
+    .screen-cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(26,58,110,0.4) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(201,168,76,0.08) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .ship-hero {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      max-width: 900px;
+      opacity: 0.12;
+      z-index: 0;
+      filter: blur(1px);
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 6px 20px;
+      font-size: 11px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+      background: rgba(10,22,40,0.5);
+    }
+
+    .cover-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 60px rgba(201,168,76,0.2);
+    }
+
+    .cover-subtitle {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 18px;
+      color: var(--white-dim);
+      letter-spacing: 8px;
+      margin-bottom: 40px;
+    }
+
+    .cover-ship-name {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .cover-ship-name span {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      display: block;
+      margin-top: 6px;
+    }
+
+    /* 江南造船Logo */
+    .jn-logo {
+      width: 60px; height: 60px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto 0;
+      position: relative;
+    }
+    .jn-logo::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 50%;
+    }
+    .jn-logo-text {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 11px;
+      color: var(--gold);
+      line-height: 1.4;
+    }
+
+    /* ===== 通用屏 ===== */
+    .screen {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 28px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .screen-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      line-height: 2;
+      color: var(--white-dim);
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .section-body p {
+      margin-bottom: 16px;
+    }
+
+    .highlight-gold {
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* ===== 致敬屏 ===== */
+    .tribute-number-wrap {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+    .tribute-number {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(201,168,76,0.3);
+    }
+    .tribute-year {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 20px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .tribute-label {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* ===== 荣耀屏数据卡片 ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(18,34,64,0.8), rgba(10,22,40,0.9));
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-2px);
+    }
+
+    .stat-number {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-unit {
+      font-size: 12px;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--white-dim);
+      margin-top: 6px;
+    }
+
+    /* ===== 邀请屏 ===== */
+    .invite-card {
+      background: linear-gradient(135deg, rgba(18,34,64,0.6), rgba(10,22,40,0.8));
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 16px;
+      padding: 40px 28px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invite-card::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .invite-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .invite-date {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .invite-month {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      margin-bottom: 24px;
+    }
+
+    .invite-detail {
+      font-size: 15px;
+      line-height: 2.2;
+      color: var(--white-dim);
+    }
+
+    .invite-detail strong {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .ship-preview {
+      width: 100%;
+      max-width: 400px;
+      margin: 24px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .ship-preview img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== 尾屏 ===== */
+    .screen-footer {
+      padding: 60px 28px 80px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .footer-seal {
+      width: 80px;
+      height: 80px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+    }
+
+    .footer-seal::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 50%;
+    }
+
+    .footer-seal-text {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 13px;
+      color: var(--gold);
+      line-height: 1.6;
+    }
+
+    .footer-sign {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      letter-spacing: 6px;
+    }
+
+    .footer-date {
+      font-size: 12px;
+      color: var(--white-dim);
+      letter-spacing: 2px;
+    }
+
+    /* ===== 星光闪烁 ===== */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--duration) ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px 2px rgba(201,168,76,0.8), 0 0 16px 4px rgba(201,168,76,0.3); }
+    }
+
+    .star-cross {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: var(--gold-light);
+      border-radius: 50%;
+      animation: crossTwinkle var(--duration) ease-in-out infinite;
+      pointer-events: none;
+    }
+    .star-cross::before, .star-cross::after {
+      content: '';
+      position: absolute;
+      background: var(--gold-light);
+      border-radius: 50%;
+    }
+    .star-cross::before {
+      width: 12px; height: 1px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .star-cross::after {
+      width: 1px; height: 12px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes crossTwinkle {
+      0%, 100% { opacity: 0; transform: scale(0.3); }
+      50% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px 3px rgba(232,213,163,0.6); }
+    }
+
+    /* ===== 标题闪耀 ===== */
+    @keyframes titleShine {
+      0% { background-position: -200% center; filter: brightness(1); }
+      50% { filter: brightness(1.3); }
+      100% { background-position: 200% center; filter: brightness(1); }
+    }
+
+    .cover-title {
+      animation: titleShine 4s ease-in-out infinite;
+      background-size: 200% auto;
+    }
+
+    /* ===== 流光边框 ===== */
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .corner-deco {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background-size: 200% 200%;
+      animation: borderFlow 3s linear infinite;
+    }
+
+    .corner-deco.tl {
+      top: 20px; left: 20px;
+      background: linear-gradient(135deg, var(--gold) 0%, transparent 40%, transparent 60%, var(--gold) 100%);
+      background-size: 200% 200%;
+      -webkit-mask: linear-gradient(to right, black 0%, black 30%, transparent 30%, transparent 100%) top left / 100% 1px no-repeat,
+                    linear-gradient(to bottom, black 0%, black 30%, transparent 30%, transparent 100%) top left / 1px 100% no-repeat;
+      mask: linear-gradient(to right, black 0%, black 30%, transparent 30%, transparent 100%) top left / 100% 1px no-repeat,
+            linear-gradient(to bottom, black 0%, black 30%, transparent 30%, transparent 100%) top left / 1px 100% no-repeat;
+    }
+    .corner-deco.tr {
+      top: 20px; right: 20px;
+      background: linear-gradient(225deg, var(--gold) 0%, transparent 40%, transparent 60%, var(--gold) 100%);
+      background-size: 200% 200%;
+      -webkit-mask: linear-gradient(to left, black 0%, black 30%, transparent 30%, transparent 100%) top right / 100% 1px no-repeat,
+                    linear-gradient(to bottom, black 0%, black 30%, transparent 30%, transparent 100%) top right / 1px 100% no-repeat;
+      mask: linear-gradient(to left, black 0%, black 30%, transparent 30%, transparent 100%) top right / 100% 1px no-repeat,
+            linear-gradient(to bottom, black 0%, black 30%, transparent 30%, transparent 100%) top right / 1px 100% no-repeat;
+    }
+    .corner-deco.bl {
+      bottom: 20px; left: 20px;
+      background: linear-gradient(45deg, var(--gold) 0%, transparent 40%, transparent 60%, var(--gold) 100%);
+      background-size: 200% 200%;
+      -webkit-mask: linear-gradient(to right, black 0%, black 30%, transparent 30%, transparent 100%) bottom left / 100% 1px no-repeat,
+                    linear-gradient(to top, black 0%, black 30%, transparent 30%, transparent 100%) bottom left / 1px 100% no-repeat;
+      mask: linear-gradient(to right, black 0%, black 30%, transparent 30%, transparent 100%) bottom left / 100% 1px no-repeat,
+            linear-gradient(to top, black 0%, black 30%, transparent 30%, transparent 100%) bottom left / 1px 100% no-repeat;
+    }
+    .corner-deco.br {
+      bottom: 20px; right: 20px;
+      background: linear-gradient(315deg, var(--gold) 0%, transparent 40%, transparent 60%, var(--gold) 100%);
+      background-size: 200% 200%;
+      -webkit-mask: linear-gradient(to left, black 0%, black 30%, transparent 30%, transparent 100%) bottom right / 100% 1px no-repeat,
+                    linear-gradient(to top, black 0%, black 30%, transparent 30%, transparent 100%) bottom right / 1px 100% no-repeat;
+      mask: linear-gradient(to left, black 0%, black 30%, transparent 30%, transparent 100%) bottom right / 100% 1px no-repeat,
+            linear-gradient(to top, black 0%, black 30%, transparent 30%, transparent 100%) bottom right / 1px 100% no-repeat;
+    }
+
+    /* ===== 卡片光晕 ===== */
+    @keyframes cardGlow {
+      0%, 100% { box-shadow: 0 0 5px rgba(201,168,76,0.1); }
+      50% { box-shadow: 0 0 20px rgba(201,168,76,0.3), 0 0 40px rgba(201,168,76,0.1); }
+    }
+
+    .stat-card {
+      animation: cardGlow 3s ease-in-out infinite;
+      animation-delay: var(--glow-delay, 0s);
+    }
+
+    .invite-card {
+      animation: cardGlow 4s ease-in-out infinite;
+    }
+
+    /* ===== 数字闪耀 ===== */
+    @keyframes numberShine {
+      0%, 100% { text-shadow: 0 0 20px rgba(201,168,76,0.3); }
+      50% { text-shadow: 0 0 40px rgba(201,168,76,0.6), 0 0 80px rgba(201,168,76,0.2); }
+    }
+
+    .tribute-number {
+      animation: numberShine 3s ease-in-out infinite;
+    }
+
+    .stat-number {
+      animation: numberShine 2.5s ease-in-out infinite;
+      animation-delay: var(--glow-delay, 0s);
+    }
+
+    .invite-date {
+      animation: numberShine 3s ease-in-out infinite;
+    }
+
+    /* ===== 分割线流光 ===== */
+    @keyframes dividerShine {
+      0% { background-position: -100% center; }
+      100% { background-position: 200% center; }
+    }
+
+    .divider, .divider-wide {
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold-light) 50%, var(--gold) 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: dividerShine 3s linear infinite;
+    }
+
+    /* ===== 徽章光效 ===== */
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.2); }
+      50% { box-shadow: 0 0 15px 2px rgba(201,168,76,0.3), inset 0 0 10px rgba(201,168,76,0.1); }
+    }
+
+    .cover-badge {
+      animation: badgePulse 2s ease-in-out infinite;
+    }
+
+    /* ===== Logo光效 ===== */
+    @keyframes logoRotate {
+      0% { transform: rotate(0deg); opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { transform: rotate(360deg); opacity: 0.3; }
+    }
+
+    .jn-logo::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      border-top-color: var(--gold);
+      border-right-color: var(--gold-light);
+      animation: logoRotate 4s linear infinite;
+    }
+
+    /* ===== 封面背景光效 ===== */
+    @keyframes bgPulse {
+      0%, 100% { opacity: 0.08; }
+      50% { opacity: 0.15; }
+    }
+
+    .screen-cover::before {
+      animation: bgPulse 4s ease-in-out infinite;
+    }
+
+    /* ===== 印章光效 ===== */
+    @keyframes sealGlow {
+      0%, 100% { box-shadow: 0 0 10px rgba(201,168,76,0.15); }
+      50% { box-shadow: 0 0 25px rgba(201,168,76,0.4), 0 0 50px rgba(201,168,76,0.1); }
+    }
+
+    .footer-seal {
+      animation: sealGlow 3s ease-in-out infinite;
+    }
+
+    /* ===== 引用符号光效 ===== */
+    @keyframes quoteGlow {
+      0%, 100% { color: rgba(201,168,76,0.15); text-shadow: none; }
+      50% { color: rgba(201,168,76,0.35); text-shadow: 0 0 20px rgba(201,168,76,0.3); }
+    }
+
+    .quote-mark {
+      animation: quoteGlow 4s ease-in-out infinite;
+    }
+
+    /* ===== 高亮文字闪烁 ===== */
+    @keyframes highlightPulse {
+      0%, 100% { text-shadow: 0 0 5px rgba(232,213,163,0.2); }
+      50% { text-shadow: 0 0 15px rgba(232,213,163,0.5), 0 0 30px rgba(201,168,76,0.2); }
+    }
+
+    .highlight-gold {
+      animation: highlightPulse 3s ease-in-out infinite;
+    }
+
+    .quote-mark {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 60px;
+      color: rgba(201,168,76,0.15);
+      line-height: 0.5;
+      margin-bottom: -10px;
+    }
+
+    /* ===== 淡入动画 ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 400px) {
+      .cover-title { font-size: 32px; }
+      .section-title { font-size: 24px; }
+      .invite-date { font-size: 40px; }
+      .stats-grid { gap: 10px; }
+      .stat-card { padding: 16px 10px; }
+      .stat-number { font-size: 22px; }
+    }
+
+    /* 印刷优化 */
+    @media print {
+      body { background: #0a1628 !important; color: #f5f0e6 !important; }
+    }
+100% { transform: translateX(-50%); }
+    }
+
+    /* ===== 海浪波浪 ===== */
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(201,168,76,0.08)' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+      background-size: 50% 100%;
+      animation: waveMove 6s linear infinite;
+    }
+    .wave:nth-child(2) {
+      bottom: 5px;
+      opacity: 0.5;
+      animation: waveMove 8s linear infinite reverse;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(201,168,76,0.05)' d='M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+      background-size: 50% 100%;
+    }
+    @keyframes waveMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ===== 雷达扫描 ===== */
+    .radar-container {
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      width: 80px;
+      height: 80px;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .radar-circle {
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+    }
+    .radar-circle:nth-child(2) {
+      inset: 15px;
+      border-color: rgba(201,168,76,0.2);
+    }
+    .radar-circle:nth-child(3) {
+      inset: 30px;
+      border-color: rgba(201,168,76,0.15);
+    }
+    .radar-sweep {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(201,168,76,0.8), transparent);
+      transform-origin: 0 50%;
+      animation: radarSweep 3s linear infinite;
+    }
+    .radar-dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 6px 2px rgba(201,168,76,0.6);
+      animation: radarDot 3s ease-in-out infinite;
+    }
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes radarDot {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== 探照灯光束 ===== */
+    .spotlight {
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 150%;
+      height: 150%;
+      background: linear-gradient(135deg, transparent 45%, rgba(201,168,76,0.03) 48%, rgba(201,168,76,0.08) 50%, rgba(201,168,76,0.03) 52%, transparent 55%);
+      z-index: 1;
+      pointer-events: none;
+      animation: spotlightSweep 8s ease-in-out infinite;
+    }
+    @keyframes spotlightSweep {
+      0%, 100% { transform: rotate(-15deg); }
+      50% { transform: rotate(15deg); }
+    }
+
+    /* ===== 船锚浮动 ===== */
+    .anchor-float {
+      position: absolute;
+      font-size: 20px;
+      color: rgba(201,168,76,0.2);
+      z-index: 1;
+      pointer-events: none;
+      animation: anchorBob 4s ease-in-out infinite;
+    }
+    @keyframes anchorBob {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    /* ===== 航迹线 ===== */
+    .wake-line {
+      position: absolute;
+      bottom: 15%;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.1), rgba(201,168,76,0.2), rgba(201,168,76,0.1), transparent);
+      z-index: 1;
+      pointer-events: none;
+      animation: wakeFlow 4s linear infinite;
+    }
+    .wake-line:nth-child(2) {
+      bottom: 12%;
+      animation-delay: 1s;
+      opacity: 0.6;
+    }
+    @keyframes wakeFlow {
+      0% { transform: translateX(-100%); opacity: 0; }
+      30% { opacity: 1; }
+      70% { opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+
+    /* ===== 船体轮廓光效 ===== */
+    .ship-glow {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 500px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), rgba(201,168,76,0.5), rgba(201,168,76,0.3), transparent);
+      border-radius: 50%;
+      filter: blur(2px);
+      z-index: 1;
+      animation: shipGlow 3s ease-in-out infinite;
+    }
+    @keyframes shipGlow {
+      0%, 100% { opacity: 0.3; transform: translateX(-50%) scaleX(0.8); }
+      50% { opacity: 0.8; transform: translateX(-50%) scaleX(1); }
+    }
+    /* ===== 船体照片画廊 ===== */
+    .ship-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.15);
+      background: linear-gradient(135deg, rgba(18,34,64,0.6), rgba(10,22,40,0.8));
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.02);
+    }
+
+    .gallery-caption {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--gold);
+      text-align: center;
+      letter-spacing: 2px;
+      background: rgba(10,22,40,0.5);
+    }
+
+    /* ===== 下拉提示 ===== */
+    .scroll-hint {
+      position: absolute;
+      bottom: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .scroll-hint-text {
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      opacity: 0.7;
+    }
+    .scroll-hint-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 0.6;
+      animation: scrollHintBounce 2s ease-in-out infinite;
+    }
+    @keyframes scrollHintBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.4; }
+      50% { transform: rotate(45deg) translateY(8px); opacity: 0.9; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 粒子背景容器 -->
+  <div id="particles"></div>
+
+  <!-- ===== 封面 ===== -->
+  <section class="screen-cover">
+    <img class="ship-hero" src="ship1.jpg" alt="爱达·花城号">
+
+    <div class="cover-content">
+      <div class="cover-badge">预 请 柬</div>
+      <h1 class="cover-title">情源内装<br>相约花城</h1>
+      <div class="divider"></div>
+      <p class="cover-ship-name">诚邀登临国产大型邮轮<br><span>爱达 · 花城号</span></p>
+      <p style="font-size:12px; color: var(--white-dim); margin-top: 16px; letter-spacing: 2px;">内装车间</p>
+      <div class="jn-logo">
+        <span class="jn-logo-text">内装<br>车间</span>
+      </div>
+    </div>
+</div>
+
+    <!-- 下拉提示 -->
+    <div class="scroll-hint">
+      <span class="scroll-hint-text">向下滑动</span>
+      <div class="scroll-hint-arrow"></div>
+    </div>
+
+    <!-- 海浪 -->
+    <div class="wave-container">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- 雷达扫描 -->
+    <div class="radar-container">
+      <div class="radar-circle"></div>
+      <div class="radar-circle"></div>
+      <div class="radar-circle"></div>
+      <div class="radar-sweep"></div>
+      <div class="radar-dot" style="top: 30%; left: 40%;"></div>
+    </div>
+
+    <!-- 探照灯光束 -->
+    <div class="spotlight"></div>
+
+    <!-- 航迹线 -->
+    <div class="wake-line"></div>
+    <div class="wake-line"></div>
+
+    <!-- 船体光效 -->
+    <div class="ship-glow"></div>
+  </section>
+
+  <!-- ===== 邀请篇 ===== -->
+  <section class="screen">
+    <div class="corner-deco tl"></div>
+    <div class="corner-deco tr"></div>
+    <div class="corner-deco bl"></div>
+    <div class="corner-deco br"></div>
+
+    <div class="screen-content">
+      <div class="fade-in">
+        <p class="section-label">诚邀</p>
+        <h2 class="section-title">共赴一场海上之约</h2>
+      </div>
+
+      <div class="fade-in">
+        <div class="ship-preview">
+          <img src="ship2_nologo.jpg" alt="爱达·花城号效果图">
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="invite-card">
+          <div class="invite-card-inner">
+            <p style="font-size: 12px; letter-spacing: 4px; color: var(--gold); margin-bottom: 16px;">INVITATION</p>
+            <div class="invite-date">9.19</div>
+            <p class="invite-month">二〇二六年 九月</p>
+            <div class="divider"></div>
+            <div class="invite-detail">
+              <p><strong>活动地点</strong></p>
+              <p>上海外高桥造船厂</p>
+              <p style="margin-top: 12px;"><strong>参观对象</strong></p>
+              <p>国产大型邮轮「爱达·花城号」</p>
+              <p style="margin-top: 12px;"><strong>活动内容</strong></p>
+              <p>登船参观 · 内装工程观摩 · 座谈交流</p>
+            </div>
+            <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(201,168,76,0.15);">
+              <p style="font-size: 13px; color: var(--white-dim); line-height: 1.8;">
+                我们诚挚邀请您回到曾经奋斗的地方<br>
+                亲眼见证当年的梦想，已化作今日的巨轮<br>
+                亲耳聆听当年的誓言，已谱写成时代的华章
+              </p>
+            </div>
+            <p style="text-align: center; font-style: italic; margin-top: 24px; color: var(--gold-light); letter-spacing: 2px; font-size: 14px;">花城有约，岁岁可期；内装情深，永不相负。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 花城掠影 ===== -->
+  <section class="screen">
+    <div class="corner-deco tl"></div>
+    <div class="corner-deco tr"></div>
+    <div class="corner-deco bl"></div>
+    <div class="corner-deco br"></div>
+
+    <div class="screen-content">
+      <div class="fade-in">
+        <p class="section-label">花城掠影</p>
+        <h2 class="section-title">国产大型邮轮升级之作<br>爱达 · 花城号</h2>
+      </div>
+
+      <div class="fade-in">
+        <div class="section-body">
+          <p>爱达·花城号（Adora Flora City）是第二艘国产大型邮轮，由上海外高桥造船有限公司建造。相较于首制船爱达·魔都号，花城号在建造工艺、技术研发、智能配置上全方位迭代升级，整体建造效率提升<span class="highlight-gold">20%</span>，彰显中国智造的硬实力。</p>
+          <p>船名呼应"花城"广州，船体线条更显流畅，核心中庭面积扩大一倍，打造花卉主题公共空间，融入海丝文化与岭南花卉元素，搭配400余件主题艺术品，营造海上花园氛围。科技层面，搭载新一代智能系统，实现<span class="highlight-gold">AI无感登船、智能客舱操控</span>等功能，全流程数字化服务提升出行便捷度。</p>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="ship-gallery">
+          <div class="gallery-item">
+            <img src="ship_exterior2.jpg" alt="爱达·花城号外观">
+            <p class="gallery-caption">船体外观 · 敦煌飞天飘带涂装</p>
+          </div>
+          <div class="gallery-item">
+            <img src="ship_interior2.jpg" alt="爱达·花城号内部中庭">
+            <p class="gallery-caption">爱达广场 · 中庭全景</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">14.19<span class="stat-unit">万吨</span></div>
+            <div class="stat-label">总吨位</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">341<span class="stat-unit">米</span></div>
+            <div class="stat-label">全长</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2130<span class="stat-unit">间</span></div>
+            <div class="stat-label">豪华客房</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5232<span class="stat-unit">人</span></div>
+            <div class="stat-label">最大载客量</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="section-body">
+          <p>全船设有28间餐厅酒吧，汇聚环球与亚洲美食，联手米其林主厨、非遗大师打造特色风味；可容纳千人的大剧院、购物中心、艺术长廊、健身房、水疗中心、儿童俱乐部等一应俱全。客房总数2130间，从温馨内舱房到尊享套房，满足不同宾客的居住需求。</p>
+          <p style="text-align: center; font-style: italic;">"这艘身披敦煌飞天飘带涂装的巨轮，<br>不仅是一座海上花园，更是中国高端船舶制造从跟随到领跑的生动注脚。"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===== 尾屏 ===== -->
+  <section class="screen-footer">
+    <div class="fade-in">
+      <div class="footer-seal">
+        <span class="footer-seal-text">内装<br>车间</span>
+      </div>
+      <p class="footer-sign">内装车间 敬邀</p>
+</div>
+  </section>
+
+  <script>
+    // 粒子效果 + 星光效果
+    (function() {
+      const container = document.getElementById('particles');
+
+      // 基础粒子（更多、更亮）
+      const particleCount = 40;
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDelay = Math.random() * 8 + 's';
+        p.style.animationDuration = (6 + Math.random() * 6) + 's';
+        const size = 1 + Math.random() * 3;
+        p.style.width = p.style.height = size + 'px';
+        p.style.opacity = 0.3 + Math.random() * 0.5;
+        p.style.boxShadow = `0 0 ${size * 2}px ${size}px rgba(201,168,76,${0.3 + Math.random() * 0.4})`;
+        container.appendChild(p);
+      }
+
+      // 星光效果
+      const starCount = 15;
+      for (let i = 0; i < starCount; i++) {
+        const s = document.createElement('div');
+        const isCross = Math.random() > 0.5;
+        s.className = isCross ? 'star-cross' : 'star';
+        s.style.left = Math.random() * 100 + '%';
+        s.style.top = Math.random() * 100 + '%';
+        const size = 2 + Math.random() * 4;
+        if (!isCross) {
+          s.style.width = size + 'px';
+          s.style.height = size + 'px';
+        }
+        s.style.setProperty('--duration', (2 + Math.random() * 4) + 's');
+        s.style.animationDelay = Math.random() * 5 + 's';
+        container.appendChild(s);
+      }
+    })();
+
+    // 淡入动画（Intersection Observer）
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // 页面加载后延迟触发首屏动画
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.screen-cover .fade-in, .screen-cover h1, .screen-cover p').forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+
+    // 给数据卡片添加随机光晕延迟
+    document.querySelectorAll('.stat-card').forEach((card, i) => {
+      card.style.setProperty('--glow-delay', (i * 0.5) + 's');
+    });
+
+    document.querySelectorAll('.stat-number').forEach((num, i) => {
+      num.style.setProperty('--glow-delay', (i * 0.3) + 's');
+    });
+  </script>
+
+</body>
+</html>
